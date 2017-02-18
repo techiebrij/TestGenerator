@@ -1,0 +1,71 @@
+.font-light {
+    font-weight: $font-weight-thin;
+}
+
+.font-roman {
+    font-weight: $font-weight-regular;
+}
+
+.font-medium {
+    font-weight: $font-weight-semi;
+}
+
+.font-heavy {
+    font-weight: $font-weight-bold;
+}
+
+.x-small {
+    @include font-size-x-small;
+}
+
+.small {
+    @include font-size-small;
+}
+
+.regular {
+    @include font-size-regular;
+}
+
+.large {
+    @include font-size-large;
+}
+
+.x-large {
+    @include font-size-x-large;
+}
+
+.xx-large {
+    @include font-size-xx-large;
+}
+
+.xxx-large {
+    @include font-size-xxx-large;
+}
+
+.xxxx-large {
+    @include font-size-xxxx-large;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.text-lower {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}

@@ -1,0 +1,21 @@
+﻿$font_size: 13px;
+
+// Adding Helvetica, Helvetica Neue, and Arial as Fallbacks if necessary;
+$font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+// $header-family: 'Roboto', sans-serif;
+
+$size-xx-small: .3em; // 4px for padding
+$size-x-small: .65em; // 8px for padding
+$size-small: .9em; // 12px
+$size-regular: 1em; // 13px
+$size-large: 1.2em; // 16px
+$size-x-large: 1.7em; // 22px
+$size-xx-large: 2.15em; // 28px
+$size-xxx-large: 2.45em; // 32px
+$size-xxxx-large: 4.9em; // 64px
+
+// Font Weights
+$font-weight-thin: 300;
+$font-weight-regular: 400;
+$font-weight-semi: 600;
+$font-weight-bold: 700;

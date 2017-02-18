@@ -1,0 +1,29 @@
+<div class="paddingTop20">
+    <div ng-switch on="test.type">
+        <div ng-switch-when="block">
+            <table class="numberGrid" ng-repeat="series in test.data">
+                <tr>
+                    <td ng-repeat="number in series track by $index">{{number}}</td>
+                </tr>
+                <tr><td colspan="20" class="no-border"></td></tr>
+            </table>
+        </div>
+        <div ng-switch-when="image">
+            <table class="imageGrid">
+                <tr ng-repeat="series in test.data">
+                    <th><i class="icon {{series.icon_first}}" ng-repeat="count in series.count_first | getNumberAsArray" style="font-size: 30pt" /></th>
+                    <td>
+                        <div class="numberBox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div ng-switch-when="number-compare">
+            <div class="row margin30" ng-repeat="series in test.data">
+                <div class="col-md-1 xxx-large">{{series.number1}}</div>
+                <div class="col-md-1 xxx-large block"></div>
+                <div class="col-md-3 xxx-large">{{series.number1}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "_assets",
+  "version": "0.0.0",
+  "description": "UKGTestGeneratorTool",
+  "license": "MIT",
+  "homepage": "index.html",
+  "directory": "lib",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.10.1",
+    "angular": "1.2.29",
+    "angular-route": "1.2.29",
+    "angular-bootstrap": "0.10.0",
+    "bootstrap": "^3.3.6"
+  },
+  "devDependencies": {
+	"angular-mocks": "1.2.29"
+  }
+}

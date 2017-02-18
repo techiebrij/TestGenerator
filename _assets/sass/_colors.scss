@@ -1,0 +1,107 @@
+// Whites, Greys and Blacks
+$white: #FFF;
+$black: #222;
+
+$dark: #333;
+$dark-pri: lighten($dark, 75.5); /* #f4f4f4 */
+$border: lighten($dark, 70); /* #e6e6e6 */
+$dark-sec: lighten($dark, 60); /* #CCC */
+$dark-tri: lighten($dark, 30); /* #666 */
+
+$blue: #3d87cf; 
+$blue-pri: lighten($blue, 43);
+$blue-sec: lighten($blue, 30);
+$blue-tri: darken($blue, 20);
+
+$green: #38B24A;
+$green-pri: lighten($green, 45);
+$green-sec: lighten($green, 30);
+$green-tri: darken($green, 10);
+
+$red: #e51414;
+$red-pri: lighten($red, 43);
+$red-sec: lighten($red, 20);
+$red-tri: darken($red, 10);
+
+$orange: #f57d21;
+$orange-pri: lighten($orange, 43);
+$orange-sec: lighten($orange, 20);
+$orange-tri: darken($orange, 7);
+
+$magenta: #f01978;
+$magenta-pri: lighten($magenta, 45);
+$magenta-sec: lighten($magenta, 20);
+$magenta-tri: darken($magenta, 10);
+
+$purple: #7354bd;
+$purple-pri: lighten($purple, 40);
+$purple-sec: lighten($purple, 30);
+$purple-tri: darken($purple, 10);
+
+$yellow: #f9ed25;
+$yellow-pri: lighten($yellow, 34);
+$yellow-sec: lighten($yellow, 20);
+$yellow-tri: darken($yellow, 10.5);
+
+$linkedin-color: #0D6696;
+$twitter-color: #34AADF;
+$google-color: #DD4B39;
+$facebook-color: #3D5B96;
+$dropbox-color: #007EE5;
+$bing-color: #faa61c;
+
+@include color-mixin("white", $white);
+@include color-mixin("black", $black);
+
+@include color-mixin("dark", $dark );
+@include color-mixin("dark-pri", $dark-pri );
+@include color-mixin("border", $border );
+@include color-mixin("dark-sec", $dark-sec );
+@include color-mixin("dark-tri", $dark-tri );
+
+@include color-mixin("blue", $blue);
+@include color-mixin("blue-pri", $blue-pri );
+@include color-mixin("blue-sec", $blue-sec );
+@include color-mixin("blue-tri", $blue-tri );
+
+@include color-mixin("green", $green);
+@include color-mixin("green-pri", $green-pri );
+@include color-mixin("green-sec", $green-sec );
+@include color-mixin("green-tri", $green-tri );
+
+@include color-mixin("red", $red);
+@include color-mixin("red-pri", $red-pri );
+@include color-mixin("red-sec", $red-sec );
+@include color-mixin("red-tri", $red-tri );
+
+@include color-mixin("orange", $orange);
+@include color-mixin("orange-pri", $orange-pri );
+@include color-mixin("orange-sec", $orange-sec );
+@include color-mixin("orange-tri", $orange-tri );
+
+@include color-mixin("magenta", $magenta);
+@include color-mixin("magenta-pri", $magenta-pri );
+@include color-mixin("magenta-sec", $magenta-sec );
+@include color-mixin("magenta-tri", $magenta-tri );
+
+@include color-mixin("purple", $purple);
+@include color-mixin("purple-pri", $purple-pri );
+@include color-mixin("purple-sec", $purple-sec );
+@include color-mixin("purple-tri", $purple-tri );
+
+@include color-mixin("yellow", $yellow);
+@include color-mixin("yellow-pri", $yellow-pri );
+@include color-mixin("yellow-sec", $yellow-sec );
+@include color-mixin("yellow-tri", $yellow-tri );
+
+@include color-mixin("linkedin-color", $linkedin-color);
+@include color-mixin("twitter-color", $twitter-color);
+@include color-mixin("google-color", $google-color);
+@include color-mixin("facebook-color", $facebook-color);
+@include color-mixin("dropbox-color", $dropbox-color);
+@include color-mixin("bing-color", $bing-color);
+
+
+// Other Colors
+// $dark-green: #20792E;
+// $purple: #7354bd;

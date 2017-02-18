@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="testGenerator">
+    <head>
+        <title>Generate UKG Tests</title>
+        <!--stylesheets and themes-->
+        <link href="/_assets/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+        <link href="/_assets/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <!--adding Libraries-->
+        <script src="/_assets/lib/jquery/jquery.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/angular/angular.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/angular-route/angular-route.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/angular-bootstrap/ui-bootstrap.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+        <!--app scripts-->
+        <link href="/_assets/css/app.css" rel="stylesheet" type="text/css" />
+        <script src="/_assets/js/app.js" type="text/javascript"></script>
+        <script src="/_assets/js/exerciseDB.js" type="text/javascript"></script>
+    </head>
+
+    <body ng-controller="indexCtrl">
+        <div id="wrap">
+            <div id="mainMenu">
+                <div ng-repeat="(module, exercises) in exerciseDB">
+                    <h1 class="xx-large paddingTop10 paddingBottom10 text-lower">{{module}}</h1>
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="exercise in exercises">
+                            <a href="#/test/{{module}}/{{exercise.id}}">{{exercise.title}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mainContent">
+                <div class="xx-large">Topic: {{test.title}}</div>
+                <div class="btn-group" role="group" style="display: none;">
+                    <button type="button" class="btn btn-default">
+                        <i class="icon icon-printer"></i><span class="large float-right font-heavy marginLeft5">Print</span>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <i class="icon icon-share"></i><span class="large float-right font-heavy marginLeft5">Share</span>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <i class="icon icon-mail"></i><span class="large float-right font-heavy marginLeft5">Email</span>
+                    </button>
+                </div>
+                <div ng-view></div>
+            </div>
+        </div>
+    </body>
+</html>

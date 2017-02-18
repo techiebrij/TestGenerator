@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="testGeneratorApp">
+    <head>
+        <title>Generate UKG Tests</title>
+        <!--stylesheets and themes-->
+        <link href="/_assets/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+        <link href="/_assets/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <!--adding Libraries-->
+        <script src="/_assets/lib/jquery/jquery.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/angular/angular.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/angular-route/angular-route.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/angular-bootstrap/ui-bootstrap.min.js" type="text/javascript"></script>
+        <script src="/_assets/lib/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+        <!--app scripts-->
+        <link href="/_assets/css/app.css" rel="stylesheet" type="text/css" />
+        <script src="/_assets/js/testGenerator.js" type="text/javascript"></script>
+        <script src="/_assets/js/exerciseFAC.js" type="text/javascript"></script>
+        <script src="/_assets/js/utilityModule.js" type="text/javascript"></script>
+    </head>
+    <body ng-controller="indexCtrl">
+        <div id="wrap">
+            <div id="mainContent">
+                <h1 class="testHeading">Topic: {{test.title}}
+                    <div style="float: right; width: 30%;">
+                        <div>Name:</div>
+                        <div style="margin: 15px 0;">Date:</div>
+                    </div>
+                </h1>
+                <div ng-switch on="test.type">
+                    <div ng-switch-when="block">
+                        <table class="numberGrid" ng-repeat="series in test.data">
+                            <tr>
+                                <td ng-repeat="number in series track by $index">{{number}}</td>
+                            </tr>
+                            <tr><td colspan="20" class="no-border"></td></tr>
+                        </table>
+                    </div>
+                    <div ng-switch-when="image">
+                        <table class="imageGrid">
+                            <tr ng-repeat="series in test.data">
+                                <th><i class="icon {{series.icon_first}}" ng-repeat="count in series.count_first | getNumberAsArray" style="font-size: 30pt" /></th>
+                                <td>
+                                    <div class="numberBox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                </td>
+                                <!--
+                                    <th><i class="icon {{series.icon_second}}" ng-repeat="count in series.count_second | getNumberAsArray" style="font-size: 30pt"/></th>
+                                    <td>
+                                        <div class="numberBox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    </td>
+                                -->
+                            </tr>
+                        </table>
+                    </div>
+                    <div ng-switch-when="image-compare">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

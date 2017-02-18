@@ -1,0 +1,105 @@
+﻿/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+//@include background-image(linear-gradient(left top, white, #4AB1D2));
+
+$icon_color: #000;
+$icon_color_light: #000;
+
+$themeColor: #08c7d1;
+$themeForeColor: #000;
+$themeBackColor: #fff;
+$themeHeadColor: #ccc;
+$link_color: #0977b7;
+
+@import "compass";
+@import "compass/reset";
+@import "base";
+@import "icon";
+@import "variables";
+@import "mixins";
+@import "colors";
+@import "typography";
+
+body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10pt;
+    color:#000;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+#wrap{
+    width: 98%;
+    margin: 0 auto;
+    #mainMenu{
+        float: left;
+        width: 20%;
+    }
+
+    #mainContent{
+        float: left;
+        width: 80%;
+        padding: 20px;
+    }
+    div{
+        overflow: hidden;
+    }
+
+    .block{
+        padding: 20px;
+        border: 1px solid #eee;
+        font-size: 20pt;
+        text-align: center !important;
+        width: 50px;
+    }
+
+    .numberGrid{
+        color: #ccc;
+        width: 100%;
+        tr{
+            td{
+                padding: 20px 0;
+                border: 1px solid #eee;
+                font-size: 20pt;
+                text-align: center !important;
+                width: 3%;
+            }
+        }
+    }
+
+    .imageGrid{
+        width: 100%;
+        tr{
+            th{
+                padding: 20px 0;
+                border: 1px solid #000;
+                font-size: 20pt;
+                text-align: center !important;
+                width: 20%;
+            }
+            td{
+                padding: 20px;
+                div.numberBox{
+                    border: 1px solid #000;
+                    padding: 20px;
+                    float: left;
+                }
+            }
+            
+        }
+    }
+
+    .no-border{
+        border: none !important;
+    }
+}
+
