@@ -25,6 +25,12 @@
 	}
 }
 
+@each $margin in 0, 5, 10, 20, 25, 30, 33, 34, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 {
+.marginBottom#{$margin} {
+		margin-bottom: $margin+px !important;
+	}
+}
+
 @each $pad in 0, 2, 4, 5, 10, 15, 20, 25, 30, 33, 34, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 {
 .padding#{$pad} {
 		padding: $pad+px !important;

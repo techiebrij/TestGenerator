@@ -6,7 +6,7 @@ angular.module('testGenerator', [
     .factory('util', [function () {
         return {
             randomNumberByBase: function(base){
-                return (Math.floor(Math.random()*100) % (base || 10));
+                return (Math.ceil(Math.random()*100) % (base || 10));
             },
             getQueryParams: function(url){
                 var qs = url.split('?')[1];
@@ -17,6 +17,22 @@ angular.module('testGenerator', [
                     qsObj[keyValue[0]] = keyValue[1];
                 }
                 return qsObj;
+            },
+            getUniqueRandomNumbers: function(base, count){
+                var randNumbers = [];
+                count = count || 2;
+                //Generate 2 unique random number greter than Zero
+                var k = 0;
+                while(true){
+                    var randomNumber = this.randomNumberByBase(base);
+                    if(randomNumber !== 0 && $.inArray(randomNumber, randNumbers)){
+                        randNumbers.push(randomNumber);
+                        k += 1;
+                        if(k === count)
+                            break;
+                    }
+                }
+                return randNumbers;
             }
         };
     }])
@@ -128,20 +144,36 @@ angular.module('testGenerator', [
                         $scope.test.data = $scope.test.data || [];
                         $scope.test.data.push({
                             icon_first: iconFactory().getRandomIcons(),
-                            count_first: util.randomNumberByBase(MAX_NUMBER),
+                            count_first: util.randomNumberByBase(MAX_NUMBER) + 1,
                         });
                     }
                     break;
                 case 5:
                     //Less/Greater Number comparision
                     for(var j = 0; j<TOTAL_EXERCISES; j++){
+                        var randNumbers = util.getUniqueRandomNumbers(MAX_NUMBER, 4);
                         $scope.test.data = $scope.test.data || [];
                         $scope.test.data.push({
-                            number1: util.randomNumberByBase(MAX_NUMBER),
-                            number2: util.randomNumberByBase(MAX_NUMBER-10)
+                            number1: randNumbers[0],
+                            number2: randNumbers[1],
+                            number3: randNumbers[2],
+                            number4: randNumbers[3]
                         });
                     }
                     break;
+                case 6:
+                    //Less/Greater, Count and Compare images
+                    for(var j = 0; j<TOTAL_EXERCISES; j++){
+                        var randNumbers = util.getUniqueRandomNumbers(MAX_NUMBER, 2);
+                        var randomIcon = iconFactory().getRandomIcons();
+                        $scope.test.data = $scope.test.data || [];
+                        $scope.test.data.push({
+                            icon_first: randomIcon,
+                            count_first: randNumbers[0],
+                            icon_second: randomIcon,
+                            count_second: randNumbers[1]
+                        });
+                    }
             }
         }
     ]);

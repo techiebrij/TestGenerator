@@ -11,7 +11,8 @@
         <div ng-switch-when="image">
             <table class="imageGrid">
                 <tr ng-repeat="series in test.data">
-                    <th><i class="icon {{series.icon_first}}" ng-repeat="count in series.count_first | getNumberAsArray" style="font-size: 30pt" /></th>
+                    <th><i class="icon {{series.icon_first}}" ng-repeat="count in series.count_first | getNumberAsArray" 
+                        style="font-size: 30pt" /></th>
                     <td>
                         <div class="numberBox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     </td>
@@ -19,10 +20,31 @@
             </table>
         </div>
         <div ng-switch-when="number-compare">
-            <div class="row margin30" ng-repeat="series in test.data">
-                <div class="col-md-1 xxx-large">{{series.number1}}</div>
-                <div class="col-md-1 xxx-large block"></div>
-                <div class="col-md-3 xxx-large">{{series.number1}}</div>
+            <table class="w100" ng-repeat="series in test.data">
+                <tr>
+                    <td class="xxx-large w20 padding10" style="text-align: right;">{{series.number1}}</td>
+                    <td class="w5 block padding20">&nbsp;</td>
+                    <td class="xxx-large w5 padding10">{{series.number2}}</td>
+                    <td>&nbsp;</td>
+                    <td class="xxx-large w5 padding10">{{series.number3}}</td>
+                    <td class="w5 block padding20">&nbsp;</td>
+                    <td class="w40 xxx-large w5 padding10">{{series.number4}}</td>
+                </tr>
+                <tr><td colspan="20">&nbsp;</td></tr>
+            </table>
+        </div>
+
+        <div ng-switch-when="image-compare">
+            <div class="row marginBottom50" ng-repeat="series in test.data">
+                <div class="col-md-4 col-md-offset-1">
+                    <i class="icon {{series.icon_first}} float-right" ng-repeat="count in series.count_first | getNumberAsArray" 
+                    style="font-size: 30pt;" />
+                </div>
+                <div class="block col-md-1">&nbsp;</div>
+                <div class="col-md-4">
+                    <i class="icon {{series.icon_second}} float-left" ng-repeat="count in series.count_second | getNumberAsArray" 
+                    style="font-size: 30pt;" />
+                </div>
             </div>
         </div>
     </div>
