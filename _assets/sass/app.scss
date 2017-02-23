@@ -99,6 +99,8 @@ body{
     }
 
     .no-border{
+        padding: 0 !important;
+        font-size: 1px;
         border: none !important;
     }
 }

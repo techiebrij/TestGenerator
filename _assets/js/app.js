@@ -6,7 +6,7 @@ angular.module('testGenerator', [
     .factory('util', [function () {
         return {
             randomNumberByBase: function(base){
-                return (Math.floor(Math.random()*100) % (base || 10)) + 1;
+                return (Math.floor(Math.random()*100) % (base || 10));
             },
             getQueryParams: function(url){
                 var qs = url.split('?')[1];
@@ -87,7 +87,8 @@ angular.module('testGenerator', [
             angular.forEach(exercises, function(exercise){
                 if(exercise.id == params.testId){
                     $scope.test = angular.copy(exercise);
-                    $scope.$parent.test = angular.copy(exercise);
+                    $scope.test.module = params.moduleName;
+                    $scope.$parent.test = angular.copy($scope.test);
                 }
             });
 
